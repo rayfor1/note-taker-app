@@ -1,18 +1,14 @@
 const express = require("express");
-
+const apiRoutes = require("./routes/apiRoutes")
 const app = express();
 const PORT = process.env.PORT || 8088;
+const path = require("path");
+const notes = require("./public/assets/js/index.js");
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static("public"));
 app.use("/api", apiRoutes);
-app.use("/", htmlRoutes);
-
-
-const app = require("express").Router();
-const path = require("path");
-const notes = require("../db/notes.js");
 
 
 // GET request to return the `index.html` file
